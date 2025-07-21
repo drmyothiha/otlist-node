@@ -3,7 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 const Patient = require('./models/Patient');
+const User = require('./models/User'); // You'll need to create this model
 
 const app = express();
 
@@ -19,8 +22,97 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('MongoDB connection error:', err));
 
-// Routes
-// Create a new patient record
+// JWT Secret
+const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key';
+
+// Auth Routes
+app.post('/api/auth/register', async (req, res) => {
+  try {
+    const { username, password, role } = req.body;
+    
+    // Check if user exists
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
+      return res.status(400).json({ message: 'Username already exists' });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create user
+    const user = new User({
+      username,
+      password: hashedPassword,
+      role: role || 'user'
+    });
+
+    await user.save();
+    res.status(201).json({ message: 'User created successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.post('/api/auth/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    // Find user
+    const user = await User.findOne({ username });
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
+
+    // Check password
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
+
+    // Create token
+    const token = jwt.sign(
+      { id: user._id, username: user.username, role: user.role },
+      JWT_SECRET,
+      { expiresIn: '24h' }
+    );
+
+    res.json({ token });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// JWT Verification Middleware
+const verifyToken = (req, res, next) => {
+  const token = req.headers['authorization']?.split(' ')[1];
+  
+  if (!token) {
+    return res.status(403).json({ message: 'No token provided' });
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+    req.user = decoded;
+    next();
+  });
+};
+
+// Role-based Middleware (optional)
+const checkRole = (roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return res.status(403).json({ message: 'Forbidden' });
+    }
+    next();
+  };
+};
+
+// Protected Routes (with JWT verification)
+app.use('/api/patients', verifyToken); // Protect all patient routes
+
+// Patient Routes (unchanged but now protected)
 app.post('/api/patients', async (req, res) => {
   try {
     const patient = new Patient(req.body);
@@ -31,7 +123,6 @@ app.post('/api/patients', async (req, res) => {
   }
 });
 
-// Get all patient records
 app.get('/api/patients', async (req, res) => {
   try {
     const patients = await Patient.find().sort({ createdAt: -1 });
@@ -41,7 +132,6 @@ app.get('/api/patients', async (req, res) => {
   }
 });
 
-// Get a single patient record
 app.get('/api/patients/:id', async (req, res) => {
   try {
     const patient = await Patient.findById(req.params.id);
@@ -51,8 +141,7 @@ app.get('/api/patients/:id', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-0
-// Update a patient record
+
 app.put('/api/patients/:id', async (req, res) => {
   try {
     const patient = await Patient.findByIdAndUpdate(req.params.id, req.body, {
@@ -66,7 +155,6 @@ app.put('/api/patients/:id', async (req, res) => {
   }
 });
 
-// Delete a patient record
 app.delete('/api/patients/:id', async (req, res) => {
   try {
     const patient = await Patient.findByIdAndDelete(req.params.id);
