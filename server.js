@@ -268,7 +268,7 @@ app.post('/api/raw-test', express.raw({ type: '*/*' }), (req, res) => {
 });
 
 // Protected Routes (with JWT verification)
-app.use('/api/patients'); // Protect all patient routes
+//app.use('/api/patients', verifyToken); // Protect all patient routes
 
 // Patient Routes (unchanged but now protected)
 app.post('/api/patients', async (req, res) => {
