@@ -272,6 +272,7 @@ app.post('/api/raw-test', express.raw({ type: '*/*' }), (req, res) => {
 
 // Patient Routes (unchanged but now protected)
 app.post('/api/patients', async (req, res) => {
+  console.log('Received payload:', req.body);
   try {
     const patient = new Patient(req.body);
     await patient.save();
