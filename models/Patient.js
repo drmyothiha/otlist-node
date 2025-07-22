@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const patientSchema = new mongoose.Schema({
   priority: { type: String, required: true },
+  otType: { type: String, required: true, enum: ['Main', 'Modular'], default: 'Main' }, // Added this line
   regNo: { type: String, required: true },
   rank: { type: String, required: true },
   name: { type: String, required: true },
@@ -22,6 +23,6 @@ const patientSchema = new mongoose.Schema({
   hcv: { type: Boolean, default: false },
   hbsag: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now }
-});
+}, { versionKey: false }); // Removes the __v field
 
 module.exports = mongoose.model('Patient', patientSchema);
