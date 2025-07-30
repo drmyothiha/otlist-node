@@ -1,0 +1,77 @@
+{
+  "_id": "68800831b384105286b1e54c",
+  "hospital": "dsgh1",
+  "regNo": "MRN-MOD-002",
+  "rank": "Sergeant",
+  "name": "Min Thu",
+  "unit": "Day Surgery",
+  "surgeon": "Dr. Modular",
+  "anaesthetist": "Dr. Anes",
+  "nurse": "Nurse Khin",
+  "hiv": false,
+  "hcv": false,
+  "hbsag": false,
+  "createdAt": "2025-07-22T21:52:49.224Z",
+  "updatedAt": "2025-07-22T21:52:49.224Z",
+  
+  "operation": {
+    "date": "2023-12-20T08:00:00.000Z",
+    "type": "Herniorrhaphy",
+    "diagnosis": "Inguinal hernia",
+    "indication": "Elective repair",
+    "status": "scheduled", 
+    "otType": "Modular",
+    "anesthesia": "local",
+    
+    "preOp": {
+      "assessmentDate": "2023-12-19T08:00:00.000Z",
+      "anesthesiaPlan": "local",
+      "medications": ["med1", "med2"],
+      "assessmentNotes": "Clear for surgery"
+    },
+
+    "intraOpMonitoring": [
+      {
+        "time": "2023-12-20T08:15:00.000Z",
+        "vitalSigns": {
+          "bloodPressure": "120/80",
+          "heartRate": "80",
+          "oxygenSaturation": "98%"
+        },
+        "anesthesiaStatus": "maintaining"
+      },
+      {
+        "time": "2023-12-20T08:45:00.000Z",
+        "vitalSigns": {
+          "bloodPressure": "115/75",
+          "heartRate": "78",
+          "oxygenSaturation": "97%"
+        },
+        "anesthesiaStatus": "maintaining"
+      }
+    ],
+
+    "drugsUsed": [
+      {
+        "drugName": "Midazolam",
+        "dosage": "2mg",
+        "route": "IV",
+        "time": "2023-12-20T08:00:00.000Z"
+      },
+      {
+        "drugName": "Fentanyl",
+        "dosage": "50mcg",
+        "route": "IV",
+        "time": "2023-12-20T08:15:00.000Z"
+      }
+    ],
+
+    "nextOperation": {
+      "scheduledDate": "2024-01-15T08:00:00.000Z",
+      "operationType": "Appendectomy",
+      "diagnosis": "Appendicitis",
+      "surgeon": "Dr. Modular",
+      "anesthesia": "general"
+    }
+  }
+}

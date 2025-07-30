@@ -1,6 +1,6 @@
 module.exports = {
   JWT_SECRET: process.env.JWT_SECRET || 'jwt_secret_key',
-  JWT_EXPIRES_IN: '24h'
+  JWT_EXPIRES_IN: '30d'
 };
 
 // Set hospital context for all requests

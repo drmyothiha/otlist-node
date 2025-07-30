@@ -26,18 +26,11 @@ app.use((req, res, next) => {
 // Routes
 const authRoutes = require('./routes/authRoutes');
 const patientRoutes = require('./routes/patientRoutes');
+const icuPatientRoutes = require('./routes/icupatientRoutes');
 
 app.use('/api/auth', authRoutes);
-app.use('/api/patients', patientRoutes);
-
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'OK',
-    uptime: process.uptime(),
-    timestamp: new Date().toISOString()
-  });
-});
+app.use('/api/OTpatients', patientRoutes);
+app.use('/api/ICUpatients', icuPatientRoutes);
 
 // 404 Handler
 app.use((req, res) => {
