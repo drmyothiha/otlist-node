@@ -6,6 +6,21 @@ const generateOperationId = () => {
   const randomNum = Math.floor(1000 + Math.random() * 9000); 
   return `OP-${year}-${randomNum}`;
 };
+function calculateAge(dob) {
+  if (!dob) return null;
+  const birthDate = dob instanceof Date ? dob : new Date(dob);
+  if (isNaN(birthDate)) return null;
+
+  const today = new Date();
+  let age = today.getUTCFullYear() - birthDate.getUTCFullYear();
+  const m = today.getUTCMonth() - birthDate.getUTCMonth();
+
+  if (m < 0 || (m === 0 && today.getUTCDate() < birthDate.getUTCDate())) {
+    age--;
+  }
+
+  return age;
+}
 
 module.exports = {
   // Patient CRUD Operations
@@ -70,18 +85,19 @@ getAllPatients: async (req, res) => {
             error: 'Invalid date format. Use YYYY-MM-DD.' 
           });
         }
-        operationMatch.date = {
+        const endOfDay = new Date(parsed);
+        endOfDay.setUTCHours(24, 0, 0, 0); // End of day UTC
+        operationMatch['operation.date'] = {
           $gte: parsed,
-          $lt: new Date(parsed),
+          $lt: endOfDay,
         };
-        operationMatch.date.$lt.setUTCHours(24, 0, 0, 0); // End of day UTC
       } else if (date === 'today') {
         const now = new Date();
         const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
         const end = new Date(start);
         end.setUTCHours(24, 0, 0, 0);
 
-        operationMatch.date = { $gte: start, $lt: end };
+        operationMatch['operation.date'] = { $gte: start, $lt: end };
       } else {
         // Handle start_date and/or end_date
         if (start_date) {
@@ -91,8 +107,8 @@ getAllPatients: async (req, res) => {
               error: 'Invalid start_date format. Use YYYY-MM-DD.' 
             });
           }
-          operationMatch.date = operationMatch.date || {};
-          operationMatch.date.$gte = parsed;
+          operationMatch['operation.date'] = operationMatch['operation.date'] || {};
+          operationMatch['operation.date'].$gte = parsed;
         }
         if (end_date) {
           const parsed = parseToUTCStartOfDay(end_date);
@@ -104,17 +120,16 @@ getAllPatients: async (req, res) => {
           const endOfDay = new Date(parsed);
           endOfDay.setUTCHours(24, 0, 0, 0); // End of that day UTC
 
-          operationMatch.date = operationMatch.date || {};
-          operationMatch.date.$lt = endOfDay;
+          operationMatch['operation.date'] = operationMatch['operation.date'] || {};
+          operationMatch['operation.date'].$lt = endOfDay;
         }
       }
     }
 
     // 2. Add status filter only if provided
-if (status) {
-  operationMatch['operation.status'] = status;
-}
-
+    if (status) {
+      operationMatch['operation.status'] = status;
+    }
 
     // 3. Aggregation pipeline
     const pipeline = [
@@ -148,18 +163,13 @@ if (status) {
       rank: p.rank,
       name: p.name,
       unit: p.unit,
-      dob: p.dob 
-        ? (p.dob instanceof Date 
-            ? p.dob.toISOString().split('T')[0] 
-            : String(p.dob).split('T')[0])
-        : null,
+      dob: calculateAge(p.dob),
       gender: p.gender,
       operations: [{
         operationId: p.operation.operationId,
         date: p.operation.date 
-  ? new Date(p.operation.date).toISOString() 
-  : null,
-
+          ? new Date(p.operation.date).toISOString() 
+          : null,
         type: p.operation.type,
         diagnosis: p.operation.diagnosis,
         indication: p.operation.indication,
