@@ -1,77 +1,238 @@
-{
-  "_id": "68800831b384105286b1e54c",
-  "hospital": "dsgh1",
-  "regNo": "MRN-MOD-002",
-  "rank": "Sergeant",
-  "name": "Min Thu",
-  "unit": "Day Surgery",
-  "surgeon": "Dr. Modular",
-  "anaesthetist": "Dr. Anes",
-  "nurse": "Nurse Khin",
-  "hiv": false,
-  "hcv": false,
-  "hbsag": false,
-  "createdAt": "2025-07-22T21:52:49.224Z",
-  "updatedAt": "2025-07-22T21:52:49.224Z",
-  
-  "operation": {
-    "date": "2023-12-20T08:00:00.000Z",
-    "type": "Herniorrhaphy",
-    "diagnosis": "Inguinal hernia",
-    "indication": "Elective repair",
-    "status": "scheduled", 
-    "otType": "Modular",
-    "anesthesia": "local",
-    
-    "preOp": {
-      "assessmentDate": "2023-12-19T08:00:00.000Z",
-      "anesthesiaPlan": "local",
-      "medications": ["med1", "med2"],
-      "assessmentNotes": "Clear for surgery"
-    },
-
-    "intraOpMonitoring": [
-      {
-        "time": "2023-12-20T08:15:00.000Z",
-        "vitalSigns": {
-          "bloodPressure": "120/80",
-          "heartRate": "80",
-          "oxygenSaturation": "98%"
-        },
-        "anesthesiaStatus": "maintaining"
-      },
-      {
-        "time": "2023-12-20T08:45:00.000Z",
-        "vitalSigns": {
-          "bloodPressure": "115/75",
-          "heartRate": "78",
-          "oxygenSaturation": "97%"
-        },
-        "anesthesiaStatus": "maintaining"
-      }
-    ],
-
-    "drugsUsed": [
-      {
-        "drugName": "Midazolam",
-        "dosage": "2mg",
-        "route": "IV",
-        "time": "2023-12-20T08:00:00.000Z"
-      },
-      {
-        "drugName": "Fentanyl",
-        "dosage": "50mcg",
-        "route": "IV",
-        "time": "2023-12-20T08:15:00.000Z"
-      }
-    ],
-
-    "nextOperation": {
-      "scheduledDate": "2024-01-15T08:00:00.000Z",
-      "operationType": "Appendectomy",
-      "diagnosis": "Appendicitis",
-      "surgeon": "Dr. Modular",
-      "anesthesia": "general"
+[
+    {
+        "hospital": "dsgh1",
+        "admissionNo": "DSGH11222",
+        "regNo": "T66545",
+        "rank": "cpl",
+        "name": "Myo Oo",
+        "unit": "LIR201",
+        "pcode": "MMR0000001",
+        "dob": "2023-12-14",
+        "gender": "Male",
+        "bloodGroup": "A+",
+        "operations": [
+            {
+                "preOpAssessment": {
+                    "assessmentDate": "2023-12-14T16:00:00.000Z",
+                    "airwayAssessment": "Mallampati II",
+                    "cardiacRisk": "Low",
+                    "respiratoryRisk": "Low",
+                    "asaGrade": "II",
+                    "allergies": "None",
+                    "medications": "None",
+                    "fastingStatus": "Confirmed",
+                    "consent": true,
+                    "preOpInstructions": "NPO after midnight",
+                    "lastMeal": "2023-12-14T22:00:00.000Z",
+                    "hb": "14.2",
+                    "btct": "Normal",
+                    "hiv": false,
+                    "hcv": false,
+                    "hbsag": false,
+                    "vdrl": false
+                },
+                "intraOpMonitoring": {
+                    "anesthesiaStartTime": "2023-12-15T08:30:00.000Z",
+                    "surgeryStartTime": "2023-12-15T09:00:00.000Z",
+                    "surgeryEndTime": "2023-12-15T10:00:00.000Z",
+                    "anesthesiaEndTime": "2023-12-15T10:15:00.000Z",
+                    "airwayManagement": "ET tube",
+                    "monitoring": [
+                        {
+                            "timeOffset": 0,
+                            "time": "2023-12-15T08:30:00.000Z",
+                            "nibp": "120/80",
+                            "spo2": "98%",
+                            "ecg": "Normal sinus rhythm",
+                            "hr": 72,
+                            "rr": 12,
+                            "temp": 36.5
+                        },
+                        {
+                            "timeOffset": 30,
+                            "time": "2023-12-15T09:00:00.000Z",
+                            "nibp": "118/78",
+                            "spo2": "99%",
+                            "ecg": "Normal sinus rhythm",
+                            "hr": 70,
+                            "rr": 12,
+                            "temp": 36.4
+                        }
+                    ],
+                    "fluidsAdministered": [
+                        {
+                            "type": "Ringer's Lactate",
+                            "volume": "1000ml",
+                            "startTime": "2023-12-15T08:30:00.000Z",
+                            "endTime": "2023-12-15T10:15:00.000Z"
+                        }
+                    ],
+                    "bloodLoss": "150ml",
+                    "urineOutput": "300ml",
+                    "complications": "None",
+                    "medications": [
+                        {
+                            "drug": "Propofol",
+                            "dose": "150mg",
+                            "timeOffset": 0,
+                            "time": "2023-12-15T08:30:00.000Z",
+                            "route": "IV",
+                            "purpose": "Induction"
+                        }
+                    ]
+                },
+                "recoveryStatus": {
+                    "painManagement": {
+                        "medication": "Paracetamol 1g IV",
+                        "time": "2023-12-15T10:45:00.000Z"
+                    },
+                    "dischargeCriteria": {
+                        "aldreteScore": 10,
+                        "met": true,
+                        "dischargeTime": "2023-12-15T11:45:00.000Z"
+                    },
+                    "recoveryStartTime": "2023-12-15T10:20:00.000Z",
+                    "recoveryEndTime": "2023-12-15T11:45:00.000Z",
+                    "vitalSigns": [
+                        {
+                            "time": "2023-12-15T10:30:00.000Z",
+                            "bp": "110/70",
+                            "hr": 75,
+                            "spo2": "98%",
+                            "painScore": 3
+                        }
+                    ],
+                    "consciousness": "Fully awake",
+                    "complications": "None",
+                    "postOpInstructions": "Regular diet as tolerated, oral analgesics"
+                },
+                "operationId": "OP-2025-001",
+                "date": "2023-12-15T09:00:00.000Z",
+                "type": "Appendectomy",
+                "diagnosis": "Acute appendicitis",
+                "indication": "Emergency surgery",
+                "status": "completed",
+                "priority": "emergency",
+                "otType": "Main",
+                "ward": "Surg5",
+                "anesthesia": "ga",
+                "surgeon": "Dr. Smith",
+                "assistant": "Dr. Johnson",
+                "anaesthetist": "Dr. Williams",
+                "nurse": "Nurse Brown"
+            },
+            {
+                "preOpAssessment": {
+                    "assessmentDate": "2023-12-14T16:00:00.000Z",
+                    "airwayAssessment": "Mallampati II",
+                    "cardiacRisk": "Low",
+                    "respiratoryRisk": "Low",
+                    "asaGrade": "II",
+                    "allergies": "None",
+                    "medications": "None",
+                    "fastingStatus": "Confirmed",
+                    "consent": true,
+                    "preOpInstructions": "NPO after midnight",
+                    "lastMeal": "2023-12-14T22:00:00.000Z",
+                    "hb": "14.2",
+                    "btct": "Normal",
+                    "hiv": false,
+                    "hcv": false,
+                    "hbsag": false,
+                    "vdrl": false
+                },
+                "intraOpMonitoring": {
+                    "anesthesiaStartTime": "2023-12-15T08:30:00.000Z",
+                    "surgeryStartTime": "2023-12-15T09:00:00.000Z",
+                    "surgeryEndTime": "2023-12-15T10:00:00.000Z",
+                    "anesthesiaEndTime": "2023-12-15T10:15:00.000Z",
+                    "airwayManagement": "ET tube",
+                    "monitoring": [
+                        {
+                            "timeOffset": 0,
+                            "time": "2023-12-15T08:30:00.000Z",
+                            "nibp": "120/80",
+                            "spo2": "98%",
+                            "ecg": "Normal sinus rhythm",
+                            "hr": 72,
+                            "rr": 12,
+                            "temp": 36.5
+                        },
+                        {
+                            "timeOffset": 30,
+                            "time": "2023-12-15T09:00:00.000Z",
+                            "nibp": "118/78",
+                            "spo2": "99%",
+                            "ecg": "Normal sinus rhythm",
+                            "hr": 70,
+                            "rr": 12,
+                            "temp": 36.4
+                        }
+                    ],
+                    "fluidsAdministered": [
+                        {
+                            "type": "Ringer's Lactate",
+                            "volume": "1000ml",
+                            "startTime": "2023-12-15T08:30:00.000Z",
+                            "endTime": "2023-12-15T10:15:00.000Z"
+                        }
+                    ],
+                    "bloodLoss": "150ml",
+                    "urineOutput": "300ml",
+                    "complications": "None",
+                    "medications": [
+                        {
+                            "drug": "Propofol",
+                            "dose": "150mg",
+                            "timeOffset": 0,
+                            "time": "2023-12-15T08:30:00.000Z",
+                            "route": "IV",
+                            "purpose": "Induction"
+                        }
+                    ]
+                },
+                "recoveryStatus": {
+                    "painManagement": {
+                        "medication": "Paracetamol 1g IV",
+                        "time": "2023-12-15T10:45:00.000Z"
+                    },
+                    "dischargeCriteria": {
+                        "aldreteScore": 10,
+                        "met": true,
+                        "dischargeTime": "2023-12-15T11:45:00.000Z"
+                    },
+                    "recoveryStartTime": "2023-12-15T10:20:00.000Z",
+                    "recoveryEndTime": "2023-12-15T11:45:00.000Z",
+                    "vitalSigns": [
+                        {
+                            "time": "2023-12-15T10:30:00.000Z",
+                            "bp": "110/70",
+                            "hr": 75,
+                            "spo2": "98%",
+                            "painScore": 3
+                        }
+                    ],
+                    "consciousness": "Fully awake",
+                    "complications": "None",
+                    "postOpInstructions": "Regular diet as tolerated, oral analgesics"
+                },
+                "operationId": "OP-2025-002",
+                "date": "2023-12-15T09:00:00.000Z",
+                "type": "Secondary Closure",
+                "diagnosis": "Unheal appendicitis",
+                "indication": "Emergency surgery",
+                "status": "completed",
+                "priority": "emergency",
+                "otType": "Main",
+                "ward": "Surg5",
+                "anesthesia": "ga",
+                "surgeon": "Dr. Smith",
+                "assistant": "Dr. Johnson",
+                "anaesthetist": "Dr. Williams",
+                "nurse": "Nurse Brown"
+            }
+        ],
+        "createdAt": "2025-07-22T21:37:10.771Z",
+        "updatedAt": "2025-07-22T21:37:10.771Z"
     }
-  }
-}
+]

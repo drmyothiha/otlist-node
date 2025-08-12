@@ -1,5 +1,7 @@
-{
-  
+[{
+  "_id": {
+    "$oid": "688e34b2345e4d97f4f62402"
+  },
   "hospital": "dsgh1",
   "regNo": "MRN-ICU-001",
   "name": "Maung Htut",
@@ -45,4 +47,4 @@
     "icuNotes": "Patient stable, monitoring ongoing.",
     "nextReviewDate": "2025-07-26T10:00:00.000Z"
   }
-}
+}]

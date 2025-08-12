@@ -3,13 +3,13 @@ const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('../config/auth');
 
 // List of valid roles
-const VALID_ROLES = ['admin', 'doctor', 'nurse', 'user'];
-
+const VALID_ROLES = ['admin', 'doctor', 'nurse', 'icu'];
 exports.register = async (req, res) => {
   try {
     console.log('Registration request received:', req.body);
     
-    const { username, password, role = 'user' } = req.body;
+
+    const { username, password, role = 'icu' } = req.body;
 
     // 1. Input validation
     console.log(`Validating input - username: ${username}, role: ${role}`);

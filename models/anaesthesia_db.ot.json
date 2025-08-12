@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "507f1f77bcf86cd799439011"
+  },
+  "hospital": "dsgh1",
+  "regNo": "MRN789",
+  "rank": "Major",
+  "name": "Mg Mg",
+  "unit": "Cardiac Ward",
+  "age": 42,
+  "gender": "Male",
+  "bloodGroup": "A+",
+  "operations": [
+    {
+      "operationId": "OP-2023-001",
+      "date": {
+        "$date": "2023-12-15T09:00:00.000Z"
+      },
+      "type": "Appendectomy",
+      "diagnosis": "Acute appendicitis",
+      "indication": "Emergency surgery",
+      "status": "completed",
+      "priority": "emergency",
+      "otType": "Main",
+      "anesthesia": "ga",
+      "surgeon": "Dr. Smith",
+      "assistant": "Dr. Johnson",
+      "anaesthetist": "Dr. Williams",
+      "nurse": "Nurse Brown",
+      "preOpAssessment": {
+        "assessmentDate": {
+          "$date": "2023-12-14T16:00:00.000Z"
+        },
+        "airwayAssessment": "Mallampati II",
+        "cardiacRisk": "Low",
+        "respiratoryRisk": "Low",
+        "asaGrade": "II",
+        "allergies": "None",
+        "medications": "None",
+        "fastingStatus": "Confirmed",
+        "consent": true,
+        "preOpInstructions": "NPO after midnight",
+        "lastMeal": {
+          "$date": "2023-12-14T22:00:00.000Z"
+        },
+        "hb": "14.2",
+        "btct": "Normal",
+        "hiv": false,
+        "hcv": false,
+        "hbsag": false
+      },
+      "intraOpMonitoring": {
+        "anesthesiaStartTime": {
+          "$date": "2023-12-15T08:30:00.000Z"
+        },
+        "surgeryStartTime": {
+          "$date": "2023-12-15T09:00:00.000Z"
+        },
+        "surgeryEndTime": {
+          "$date": "2023-12-15T10:00:00.000Z"
+        },
+        "anesthesiaEndTime": {
+          "$date": "2023-12-15T10:15:00.000Z"
+        },
+        "airwayManagement": "ET tube",
+        "monitoring": [
+          {
+            "timeOffset": 0,
+            "time": {
+              "$date": "2023-12-15T08:30:00.000Z"
+            },
+            "nibp": "120/80",
+            "spo2": "98%",
+            "ecg": "Normal sinus rhythm",
+            "hr": 72,
+            "rr": 12,
+            "temp": 36.5
+          },
+          {
+            "timeOffset": 30,
+            "time": {
+              "$date": "2023-12-15T09:00:00.000Z"
+            },
+            "nibp": "118/78",
+            "spo2": "99%",
+            "ecg": "Normal sinus rhythm",
+            "hr": 70,
+            "rr": 12,
+            "temp": 36.4
+          }
+        ],
+        "fluidsAdministered": [
+          {
+            "type": "Ringer's Lactate",
+            "volume": "1000ml",
+            "startTime": {
+              "$date": "2023-12-15T08:30:00.000Z"
+            },
+            "endTime": {
+              "$date": "2023-12-15T10:15:00.000Z"
+            }
+          }
+        ],
+        "bloodLoss": "150ml",
+        "urineOutput": "300ml",
+        "complications": "None",
+        "medications": [
+          {
+            "drug": "Propofol",
+            "dose": "150mg",
+            "timeOffset": 0,
+            "time": {
+              "$date": "2023-12-15T08:30:00.000Z"
+            },
+            "route": "IV",
+            "purpose": "Induction"
+          }
+        ]
+      },
+      "recoveryStatus": {
+        "recoveryStartTime": {
+          "$date": "2023-12-15T10:20:00.000Z"
+        },
+        "recoveryEndTime": {
+          "$date": "2023-12-15T11:45:00.000Z"
+        },
+        "vitalSigns": [
+          {
+            "time": {
+              "$date": "2023-12-15T10:30:00.000Z"
+            },
+            "bp": "110/70",
+            "hr": 75,
+            "spo2": "98%",
+            "painScore": 3
+          }
+        ],
+        "consciousness": "Fully awake",
+        "painManagement": {
+          "medication": "Paracetamol 1g IV",
+          "time": {
+            "$date": "2023-12-15T10:45:00.000Z"
+          }
+        },
+        "dischargeCriteria": {
+          "aldreteScore": 10,
+          "met": true,
+          "dischargeTime": {
+            "$date": "2023-12-15T11:45:00.000Z"
+          }
+        },
+        "complications": "None",
+        "postOpInstructions": "Regular diet as tolerated, oral analgesics"
+      }
+    },
+    {
+      "operationId": "OP-2024-002",
+      "date": {
+        "$date": "2024-01-20T10:00:00.000Z"
+      },
+      "type": "Hernia Repair",
+      "diagnosis": "Inguinal hernia",
+      "status": "scheduled",
+      "priority": "elective",
+      "surgeon": "Dr. Smith",
+      "preOpAssessment": {
+        "assessmentDate": {
+          "$date": "2024-01-18T14:00:00.000Z"
+        },
+        "asaGrade": "II"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-07-22T21:37:10.771Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T21:37:10.771Z"
+  }
+}]

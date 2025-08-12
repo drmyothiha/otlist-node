@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "687f8c20205b0bc82c4dfc5a"
+  },
+  "username": "mth",
+  "password": "20ebc2414cd079f73625057d697bda344ec794a0b76a3267fd92fdd624d589d0d6aa9ce693d21eaa2c1bdf2838905e6d047feb2a6a89c9ea6f16a9ee9a07a098",
+  "role": "user",
+  "createdAt": {
+    "$date": "2025-07-22T13:03:28.112Z"
+  },
+  "salt": "40aae8d0cb32c58a9fa843c022db2bd3",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687f903019472be5967db3ff"
+  },
+  "username": "koko",
+  "password": "f31bbd4f190d9ad23a6922ca0d9fe953503a17ff15d7355143026a1b21ccc958616e87ffa748108d67f973f34c28eb9d2c55132f3d9b1d7782d3fd24c69b3708",
+  "role": "user",
+  "createdAt": {
+    "$date": "2025-07-22T13:20:48.978Z"
+  },
+  "salt": "d83a47a0ef70d1de2ed409bc22ec6c70",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687fc42f8d2077a9b2cc8342"
+  },
+  "username": "admin",
+  "password": "93e03003b12adbe92e477adb4af4f67610adf90d965797727ee2e80198c202a0be06b5ff46d385fd1d3205ea762a93948857b2aae93e3c40fbdd775c6d0f438a",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2025-07-22T17:02:39.819Z"
+  },
+  "salt": "576fda77d8ce0f338ec02da72fc83371",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687fc5d18d2077a9b2cc8348"
+  },
+  "username": "doctor",
+  "password": "b2e390b48c09787aa26bc92aa18c9311aa40365cb417cce9083c70aecde1b906f819ac23729a508a59e7988c53c1069254a4cef264dba09cf2cd33d0dd158f2a",
+  "role": "doctor",
+  "createdAt": {
+    "$date": "2025-07-22T17:09:37.193Z"
+  },
+  "salt": "b1648a9e6e33960b68aed7d83bcc0bbd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687fc6408d2077a9b2cc834e"
+  },
+  "username": "nurse",
+  "password": "208a8387c07d77b10e8cb5a278b7bd5faa7c245496640cb3ce54ca9d81ce2d83112909874d5b9c88d7d834019daa66e6df6086d7800190b40f7d442ec57cbc06",
+  "role": "nurse",
+  "createdAt": {
+    "$date": "2025-07-22T17:11:28.608Z"
+  },
+  "salt": "43dec5a3941fb795b525f0ff15f10d6c",
+  "__v": 0
+}]

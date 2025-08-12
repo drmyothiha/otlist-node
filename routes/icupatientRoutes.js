@@ -10,8 +10,9 @@ router.use(setHospitalContext);
 // ICU Patient CRUD Routes
 router.post('/', icuPatientController.createICUPatient);
 router.get('/', icuPatientController.getAllICUPatients); // Modify as needed for filters
-router.get('/:regNo', icuPatientController.getICUPatientByRegNo);
-router.put('/:regNo', icuPatientController.updateICUPatient);
-router.delete('/:regNo', icuPatientController.deleteICUPatient);
+router.get('/:admissionNo', icuPatientController.getICUPatientByadmissionNo);
+router.put('/:admissionNo', icuPatientController.updateICUPatient);
+router.patch('/:admissionNo', icuPatientController.patchICUPatient);
+router.delete('/:admissionNo', icuPatientController.deleteICUPatient);
 
 module.exports = router;

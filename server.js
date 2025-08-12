@@ -14,7 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // အမှတ် (၁) ကုတင် (၁၀၀၀)အတွက်ပဲ လောလောဆယ် ယာယီအနေနဲ့ ထည့်ထားတာပါ။ 
 // နောက်ဆို တစ်နိုင်ငံလုံးဆေးရုံတွေ သုံးမယ်ဆို User registration ကတည်းက ဆေးရုံ ID တစ်ခါတည်း ထည့်တာလုပ်ပေးရန်။ 
-// Front end မထည့်ရသေးပါ။
 // New patient ထည့်တိုင်း လူနာတက်သည့် ဆေးရုံ ID အား အလိုအလျောက်ထည့်သွင်းရန်
 app.use((req, res, next) => {
   if (!req.headers['x-hospital-id']) {
