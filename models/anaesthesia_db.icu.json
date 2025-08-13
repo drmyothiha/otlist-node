@@ -3,17 +3,20 @@
     "$oid": "688e34b2345e4d97f4f62402"
   },
   "hospital": "dsgh1",
-  "regNo": "MRN-ICU-001",
+  "regNo": "bc5555",
   "name": "Maung Htut",
   "age": 65,
   "gender": "Male",
-  "admissionDate": "2025-07-25T10:30:00.000Z",
+  "admissionDate": {
+    "$date": "2025-07-25T10:30:00.000Z"
+  },
   "icuAdmissionReason": "Post-surgical recovery",
   "admittingDoctor": "Dr. ICU",
   "nurse": "Nurse May",
   "medicalHistory": [
     "Hypertension",
-    "Diabetes"
+    "Diabetes",
+    "mm"
   ],
   "icuDetails": {
     "admissionStatus": "stable",
@@ -22,29 +25,12 @@
       "oxygenSaturation": "96%"
     },
     "cardiacMonitoring": {
-      "heartRate": "85",
-      "bloodPressure": "130/85",
-      "ecgStatus": "normal"
+      "heartRate": "85"
     },
-    "renalMonitoring": {
-      "urineOutput": "350ml",
-      "creatinine": "1.2 mg/dL"
-    },
-    "medications": [
-      {
-        "drugName": "Lisinopril",
-        "dosage": "5mg",
-        "route": "oral",
-        "time": "2025-07-25T10:00:00.000Z"
-      },
-      {
-        "drugName": "Insulin",
-        "dosage": "10 units",
-        "route": "subcutaneous",
-        "time": "2025-07-25T10:15:00.000Z"
-      }
-    ],
-    "icuNotes": "Patient stable, monitoring ongoing.",
-    "nextReviewDate": "2025-07-26T10:00:00.000Z"
+    "medications": []
+  },
+  "admissionNo": "MRN-ICU-001",
+  "updatedAt": {
+    "$date": "2025-08-12T10:43:55.799Z"
   }
 }]

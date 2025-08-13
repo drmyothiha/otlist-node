@@ -1,32 +1,19 @@
 [{
   "_id": {
-    "$oid": "507f1f77bcf86cd799439011"
+    "$oid": "688f35226bddcec0ff818de7"
   },
   "hospital": "dsgh1",
-  "regNo": "MRN789",
+  "admissionNo": "BC48800",
+  "regNo": "BC48800",
   "rank": "Major",
   "name": "Mg Mg",
-  "unit": "Cardiac Ward",
-  "age": 42,
+  "unit": "LIR201",
+  "pcode": "MMR0000001",
+  "dob": "ISODate(\"2023-12-14T00:00:00.000Z\")",
   "gender": "Male",
   "bloodGroup": "A+",
   "operations": [
     {
-      "operationId": "OP-2023-001",
-      "date": {
-        "$date": "2023-12-15T09:00:00.000Z"
-      },
-      "type": "Appendectomy",
-      "diagnosis": "Acute appendicitis",
-      "indication": "Emergency surgery",
-      "status": "completed",
-      "priority": "emergency",
-      "otType": "Main",
-      "anesthesia": "ga",
-      "surgeon": "Dr. Smith",
-      "assistant": "Dr. Johnson",
-      "anaesthetist": "Dr. Williams",
-      "nurse": "Nurse Brown",
       "preOpAssessment": {
         "assessmentDate": {
           "$date": "2023-12-14T16:00:00.000Z"
@@ -47,7 +34,8 @@
         "btct": "Normal",
         "hiv": false,
         "hcv": false,
-        "hbsag": false
+        "hbsag": false,
+        "vdrl": false
       },
       "intraOpMonitoring": {
         "anesthesiaStartTime": {
@@ -118,6 +106,19 @@
         ]
       },
       "recoveryStatus": {
+        "painManagement": {
+          "medication": "Paracetamol 1g IV",
+          "time": {
+            "$date": "2023-12-15T10:45:00.000Z"
+          }
+        },
+        "dischargeCriteria": {
+          "aldreteScore": 10,
+          "met": true,
+          "dischargeTime": {
+            "$date": "2023-12-15T11:45:00.000Z"
+          }
+        },
         "recoveryStartTime": {
           "$date": "2023-12-15T10:20:00.000Z"
         },
@@ -136,38 +137,87 @@
           }
         ],
         "consciousness": "Fully awake",
-        "painManagement": {
-          "medication": "Paracetamol 1g IV",
-          "time": {
-            "$date": "2023-12-15T10:45:00.000Z"
-          }
-        },
-        "dischargeCriteria": {
-          "aldreteScore": 10,
-          "met": true,
-          "dischargeTime": {
-            "$date": "2023-12-15T11:45:00.000Z"
-          }
-        },
         "complications": "None",
         "postOpInstructions": "Regular diet as tolerated, oral analgesics"
-      }
+      },
+      "operationId": "OP-2025-001",
+      "date": {
+        "$date": "2023-12-15T09:00:00.000Z"
+      },
+      "type": "Appendectomy",
+      "diagnosis": "Acute appendicitis",
+      "indication": "Emergency surgery",
+      "status": "completed",
+      "priority": "emergency",
+      "otType": "Main",
+      "ward": "Surg5",
+      "anesthesia": "ga",
+      "surgeon": "Dr. Aung",
+      "assistant": "Dr. Than",
+      "anaesthetist": "Dr. Myo Thiha",
+      "nurse": "Nurse Min"
     },
     {
-      "operationId": "OP-2024-002",
-      "date": {
-        "$date": "2024-01-20T10:00:00.000Z"
+      "preOpAssessment": {
+        "hiv": false,
+        "hcv": false,
+        "hbsag": false,
+        "assessmentDate": "2024-01-18T14:00:00.000Z",
+        "asaGrade": "II"
       },
+      "intraOpMonitoring": {
+        "monitoring": [],
+        "fluidsAdministered": [],
+        "medications": []
+      },
+      "recoveryStatus": {
+        "vitalSigns": []
+      },
+      "otType": "Main",
+      "operationId": "OP-2024-002",
+      "date": "2024-01-20T10:00:00.000Z",
       "type": "Hernia Repair",
       "diagnosis": "Inguinal hernia",
       "status": "scheduled",
       "priority": "elective",
+      "surgeon": "Dr. Smith"
+    }
+  ],
+  "createdAt": "2025-07-22T21:37:10.771Z",
+  "updatedAt": "2025-07-22T21:37:10.771Z"
+},
+{
+  "_id": {
+    "$oid": "688f3f1db5f24a689f114663"
+  },
+  "hospital": "dsgh1",
+  "admissionNo": "DSGH11222",
+  "name": "Myo Oo",
+  "operations": [
+    {
+      "operationId": "OP-2025-7734",
+      "date": {
+        "$date": "2023-12-15T09:00:00.000Z"
+      },
+      "type": "Modified Appendectomy",
+      "diagnosis": "Acute appendicitis",
+      "indication": "Emergency surgery",
+      "status": "completed",
+      "priority": "emergency",
+      "otType": "Main",
+      "anesthesia": "ga",
       "surgeon": "Dr. Smith",
+      "assistant": "Dr. Johnson",
+      "anaesthetist": "Dr. Williams",
+      "nurse": "Nurse Brown",
       "preOpAssessment": {
-        "assessmentDate": {
-          "$date": "2024-01-18T14:00:00.000Z"
-        },
-        "asaGrade": "II"
+        "airwayAssessment": "Mallampati III"
+      },
+      "intraOpMonitoring": {
+        "bloodLoss": "200ml"
+      },
+      "recoveryStatus": {
+        "vitalSigns": []
       }
     }
   ],
@@ -175,6 +225,288 @@
     "$date": "2025-07-22T21:37:10.771Z"
   },
   "updatedAt": {
-    "$date": "2025-07-22T21:37:10.771Z"
-  }
+    "$date": "2025-08-05T21:37:10.771Z"
+  },
+  "bloodGroup": "A+",
+  "dob": "ISODate(\"2023-12-14T00:00:00.000Z\")",
+  "gender": "Male",
+  "pcode": "MMR0000002",
+  "rank": "cpl",
+  "regNo": "T66545",
+  "unit": "LIR201"
+},
+{
+  "_id": {
+    "$oid": "688f809de7afcb3deb5c4bd2"
+  },
+  "hospital": "dsgh1",
+  "admissionNo": "dsgh0003",
+  "name": "mm",
+  "operations": [
+    {
+      "operationId": "OP-1754235037074",
+      "date": {
+        "$date": "2025-08-03T14:53:00.000Z"
+      },
+      "type": "m",
+      "diagnosis": "mm",
+      "indication": "m",
+      "status": "scheduled",
+      "postponedDate": null,
+      "priority": "routine",
+      "otType": "Main",
+      "anesthesia": "shortGa",
+      "surgeon": "m",
+      "assistant": "m",
+      "anaesthetist": "m",
+      "nurse": "m",
+      "preOpAssessment": {
+        "lastMeal": {
+          "$date": "2025-08-03T14:54:00.000Z"
+        },
+        "localTest": "m",
+        "hb": "",
+        "btct": "",
+        "hiv": false,
+        "hcv": false,
+        "hbsag": false
+      },
+      "intraOpMonitoring": {
+        "monitoring": [],
+        "fluidsAdministered": [],
+        "medications": []
+      },
+      "recoveryStatus": {
+        "vitalSigns": []
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-08-03T15:30:37.075Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-03T15:30:37.117Z"
+  },
+  "regNo": "6767",
+  "rank": "rm",
+  "unit": "mm"
+},
+{
+  "_id": {
+    "$oid": "6898c62131a2353e9fb6c320"
+  },
+  "hospital": "dsgh1",
+  "admissionNo": "dsgh111",
+  "name": "mth",
+  "operations": [
+    {
+      "operationId": "OP-1754842657661",
+      "date": {
+        "$date": "2025-08-10T16:15:00.000Z"
+      },
+      "type": "sd",
+      "diagnosis": "ds",
+      "indication": "sd",
+      "status": "scheduled",
+      "postponedDate": null,
+      "priority": "routine",
+      "otType": "Main",
+      "anesthesia": "ga",
+      "surgeon": "sd",
+      "assistant": "",
+      "anaesthetist": "sd",
+      "nurse": "sd",
+      "preOpAssessment": {
+        "lastMeal": {
+          "$date": "2025-08-10T16:16:00.000Z"
+        },
+        "localTest": "",
+        "hb": "",
+        "btct": "",
+        "hiv": false,
+        "hcv": false,
+        "hbsag": false,
+        "airwayAssessment": "Class II: Soft palate, uvula, fauces visible",
+        "allergies": "",
+        "asaGrade": "ASA II",
+        "assessmentDate": {
+          "$date": "2025-08-10T19:12:32.663Z"
+        },
+        "cardiacRisk": "sfd",
+        "fastingStatus": "Non-compliant",
+        "medications": "asdfsdfds",
+        "respiratoryRisk": ""
+      },
+      "intraOpMonitoring": {
+        "monitoring": [],
+        "fluidsAdministered": [],
+        "medications": []
+      },
+      "recoveryStatus": {
+        "vitalSigns": []
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-08-10T16:17:37.661Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-10T16:17:37.751Z"
+  },
+  "regNo": "12",
+  "rank": "12",
+  "unit": "gh"
+},
+{
+  "_id": {
+    "$oid": "6898f00dfa80933685f5eb3f"
+  },
+  "hospital": "dsgh1",
+  "admissionNo": "3100mh001",
+  "name": "Daw Hla",
+  "operations": [
+    {
+      "operationId": "OP-1754853389325",
+      "date": {
+        "$date": "2025-08-11T01:30:00.000Z"
+      },
+      "type": "Myomatomy",
+      "diagnosis": "Myoma",
+      "indication": "Myoma",
+      "status": "scheduled",
+      "postponedDate": null,
+      "priority": "urgent",
+      "otType": "Main",
+      "anesthesia": "sab",
+      "surgeon": "Dr YM",
+      "assistant": "",
+      "anaesthetist": "Dr MTH",
+      "nurse": "Br NL",
+      "preOpAssessment": {
+        "lastMeal": {
+          "$date": "2025-08-09T17:30:00.000Z"
+        },
+        "localTest": "",
+        "hb": "",
+        "btct": "",
+        "hiv": false,
+        "hcv": false,
+        "hbsag": false,
+        "airwayAssessment": "Class III: Soft palate, base of uvula visible",
+        "allergies": "",
+        "asaGrade": "ASA III",
+        "assessmentDate": {
+          "$date": "2025-08-11T12:09:39.065Z"
+        },
+        "cardiacRisk": "",
+        "fastingStatus": "Non-compliant",
+        "medications": "",
+        "respiratoryRisk": ""
+      },
+      "intraOpMonitoring": {
+        "monitoring": [],
+        "fluidsAdministered": [],
+        "medications": [
+          {
+            "drug": "fen"
+          },
+          {
+            "drug": "propofol"
+          },
+          {
+            "drug": ""
+          },
+          {
+            "drug": ""
+          },
+          {
+            "drug": ""
+          }
+        ]
+      },
+      "recoveryStatus": {
+        "vitalSigns": []
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-08-10T19:16:29.325Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-11T21:18:16.195Z"
+  },
+  "regNo": "1212",
+  "rank": "maj",
+  "unit": "3100"
+},
+{
+  "_id": {
+    "$oid": "6899d00f1373609dcbc02cd6"
+  },
+  "hospital": "dsgh1",
+  "admissionNo": "dsgh1113",
+  "name": "Myo min",
+  "operations": [
+    {
+      "operationId": "OP-1754910735257",
+      "date": {
+        "$date": "2025-08-11T11:11:00.000Z"
+      },
+      "type": "a",
+      "diagnosis": "as",
+      "indication": "a",
+      "status": "scheduled",
+      "postponedDate": null,
+      "priority": "routine",
+      "otType": "Main",
+      "anesthesia": "ga",
+      "surgeon": "a",
+      "assistant": "a",
+      "anaesthetist": "a",
+      "nurse": "a",
+      "preOpAssessment": {
+        "lastMeal": {
+          "$date": "2025-08-11T11:12:00.000Z"
+        },
+        "localTest": "",
+        "hb": "HB:13 ",
+        "btct": "3-5",
+        "hiv": false,
+        "hcv": false,
+        "hbsag": false,
+        "airwayAssessment": "Class I: Soft palate, uvula, fauces, pillars visible",
+        "allergies": "",
+        "asaGrade": "ASA II",
+        "assessmentDate": {
+          "$date": "2025-08-11T12:16:50.144Z"
+        },
+        "cardiacRisk": "RCRI",
+        "fastingStatus": "Non-compliant",
+        "medications": "almong 10mg",
+        "respiratoryRisk": ""
+      },
+      "intraOpMonitoring": {
+        "monitoring": [],
+        "fluidsAdministered": [
+          {
+            "type": "Normal Saline",
+            "volume": "500ml"
+          }
+        ],
+        "medications": []
+      },
+      "recoveryStatus": {
+        "vitalSigns": []
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-08-11T11:12:15.257Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-11T15:06:13.247Z"
+  },
+  "regNo": "4455",
+  "rank": "maj",
+  "unit": "as"
 }]
